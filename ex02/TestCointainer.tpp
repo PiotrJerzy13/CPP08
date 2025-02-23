@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   TestCointainer.tpp                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pwojnaro <pwojnaro@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/23 11:49:45 by pwojnaro          #+#    #+#             */
+/*   Updated: 2025/02/23 11:49:50 by pwojnaro         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 # pragma once
 
 template <typename T, bool isStack>
@@ -28,7 +40,8 @@ void testContainer(T& container, const std::string& containerName)
 		container.push(5);
 		container.push(737);
 		container.push(0);
-	} else
+	}
+	else
 	{
 		container.push_back(3);
 		container.push_back(5);
