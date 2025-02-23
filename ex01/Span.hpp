@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Spam.hpp                                           :+:      :+:    :+:   */
+/*   Span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pwojnaro <pwojnaro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/21 17:23:11 by pwojnaro          #+#    #+#             */
-/*   Updated: 2025/02/21 17:51:06 by pwojnaro         ###   ########.fr       */
+/*   Updated: 2025/02/23 11:05:04 by pwojnaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,6 @@ public:
 
 	void addNumber(int num);
 	void addNumbers(std::vector<int>::iterator begin, std::vector<int>::iterator end);
-	
 	int shortestSpan() const;
 	int longestSpan() const;
-
 };

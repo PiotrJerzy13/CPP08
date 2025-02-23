@@ -6,7 +6,7 @@
 /*   By: pwojnaro <pwojnaro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/21 17:23:26 by pwojnaro          #+#    #+#             */
-/*   Updated: 2025/02/21 18:38:18 by pwojnaro         ###   ########.fr       */
+/*   Updated: 2025/02/23 11:25:44 by pwojnaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,6 @@ void Span::addNumber(int num)
 		throw std::out_of_range("Span is full");
 	
 	numbers.emplace_back(num);
-
-	std::vector<int>(numbers).swap(numbers);
 }
 
 void Span::addNumbers(std::vector<int>::iterator begin, std::vector<int>::iterator end)
@@ -47,23 +45,22 @@ void Span::addNumbers(std::vector<int>::iterator begin, std::vector<int>::iterat
 		throw std::out_of_range("Too many numbers to add!");
 
 	numbers.insert(numbers.end(), begin, end);
-	std::vector<int>(numbers).swap(numbers);
 }
 
 int Span::shortestSpan() const
 {
-    if (numbers.size() < 2)
-        throw std::logic_error("Not enough numbers to calculate span");
+	if (numbers.size() < 2)
+		throw std::logic_error("Not enough numbers to calculate span");
 
-    std::vector<int> sortedNumbers(numbers.begin(), numbers.end());
-    std::sort(sortedNumbers.begin(), sortedNumbers.end());
+	std::vector<int> sortedNumbers(numbers.begin(), numbers.end());
+	std::sort(sortedNumbers.begin(), sortedNumbers.end());
 
-    int minSpan = sortedNumbers[1] - sortedNumbers[0];
-    for (size_t i = 1; i < sortedNumbers.size() - 1; i++)
-    {
-        minSpan = std::min(minSpan, sortedNumbers[i + 1] - sortedNumbers[i]);
-    }
-    return minSpan;
+	int minSpan = INT_MAX;
+	for (size_t i = 0; i < sortedNumbers.size() - 1; i++)
+	{
+		minSpan = std::min(minSpan, sortedNumbers[i + 1] - sortedNumbers[i]);
+	}
+	return minSpan;
 }
 
 int Span::longestSpan() const
@@ -76,4 +73,3 @@ int Span::longestSpan() const
 
 	return maxNum - minNum;
 }
-
